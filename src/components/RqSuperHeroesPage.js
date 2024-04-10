@@ -3,11 +3,13 @@ import { useQuery } from "react-query";
 import axios from "axios";
 
 const RqSuperHeroesPage = () => {
-  const { data, isLoading, error, isError } = useQuery(
+  const { data, isLoading, error, isError, isFetching, refetch } = useQuery(
     "super-heroes",
     async () => {
       const { data } = await axios.get("http://localhost:5000/superheroes", {
-        cacheTime: 5000,
+        // cacheTime: 5000,
+        // staleTime: 30000,
+        enabled: false,
       });
 
       console.log(data);
@@ -15,7 +17,7 @@ const RqSuperHeroesPage = () => {
     }
   );
 
-  if (isLoading) {
+  if (isLoading || isFetching) {
     return <div>Loading...</div>;
   }
 
@@ -26,6 +28,7 @@ const RqSuperHeroesPage = () => {
   return (
     <div>
       <h1>Super Heroes</h1>
+      <button onClick={refetch}>Refetch</button>
       <ul>
         {data.map((hero) => (
           <li key={hero.id}>
