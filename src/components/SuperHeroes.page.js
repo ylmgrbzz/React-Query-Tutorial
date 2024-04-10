@@ -1,7 +1,7 @@
 import React from "react";
 
 const SuperHeroes = () => {
-  return <div>SuperHeroes.page</div>;
+  return <div>SuperHeroesPage</div>;
 };
 
 export default SuperHeroes;
