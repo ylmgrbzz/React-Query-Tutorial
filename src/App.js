@@ -5,6 +5,7 @@ import RqSuperHeroesPage from "./components/RqSuperHeroesPage";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 function App() {
   const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ function App() {
           <Route path="rq-super-heroes" element={<RqSuperHeroesPage />} />
         </Routes>
       </div>
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>
   );
 }
