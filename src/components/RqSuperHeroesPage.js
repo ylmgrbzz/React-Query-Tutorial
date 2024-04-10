@@ -6,7 +6,10 @@ const RqSuperHeroesPage = () => {
   const { data, isLoading, error, isError } = useQuery(
     "super-heroes",
     async () => {
-      const { data } = await axios.get("http://localhost:5000/superheroes");
+      const { data } = await axios.get("http://localhost:5000/superheroes", {
+        cacheTime: 5000,
+      });
+
       console.log(data);
       return data;
     }
