@@ -3,7 +3,9 @@ import { useQuery } from "react-query";
 import axios from "axios";
 
 const fetch = (heroId) => {
-  return axios.get(`http://localhost:5000/superheroes${heroId}`);
+  console.log("yalımmm", heroId);
+
+  return axios.get(`http://localhost:5000/superheroes/${heroId}`);
 };
 
 const useSuperHeroData = (heroId) => {
