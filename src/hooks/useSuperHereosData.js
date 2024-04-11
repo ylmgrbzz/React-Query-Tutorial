@@ -16,10 +16,10 @@ const useSuperHereosData = (onSuccess, onError) => {
       // enabled: false,
       onSuccess,
       onError,
-      select: (data) => {
-        const superHeroes = data.data.map((hero) => hero.name);
-        return superHeroes;
-      },
+      //   select: (data) => {
+      //     const superHeroes = data.data.map((hero) => hero.name);
+      //     return superHeroes;
+      //   },
     }
   );
 };
